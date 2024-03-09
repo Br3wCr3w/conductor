@@ -1,0 +1,7 @@
+{
+  "name": "conductor",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}

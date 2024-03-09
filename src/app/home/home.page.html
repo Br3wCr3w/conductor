@@ -1,0 +1,27 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <!-- User Input Form -->
+    <ion-item>
+      <ion-label position="floating">Your Story Prompt</ion-label>
+      <ion-input [(ngModel)]="userPrompt"></ion-input>
+    </ion-item>
+    <ion-button (click)="submitPrompt()">Generate Story</ion-button>
+  </ion-toolbar>
+</ion-header>
+
+<ng-container *ngIf="response$ | async as response">
+<ion-content [fullscreen]="true">
+  <div id="container">  
+    <!-- Display Response -->
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Generated Story</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <app-code-display [code]="response"></app-code-display>
+      </ion-card-content>
+    </ion-card>
+  </div>
+ 
+</ion-content>
+</ng-container>
